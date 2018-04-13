@@ -1,5 +1,5 @@
 build:
-	$(MAKE) -C ../02-first_steps build
+	$(MAKE) -C ../00-first_steps build
 
 .PHONY: build
 

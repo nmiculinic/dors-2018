@@ -1,0 +1,12 @@
+hello_world: main.go
+	go build -tags netgo -ldflags "-extldflags '-lm -lstdc++ -static'" -o hello_world .
+
+docker_image: hello_world
+	docker build -t dors-hello-world .
+.PHONY: docker_image
+
+build: hello_world docker_image
+
+.PHONY: build
+
+.FORCE:
