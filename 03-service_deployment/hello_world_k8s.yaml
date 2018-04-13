@@ -35,4 +35,3 @@ spec:
     targetPort: http
   selector:
     app: hello-world
-  type: NodePort
