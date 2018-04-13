@@ -13,3 +13,4 @@ kubectl get pod --all-namespaces
 
 More information:
 https://kubernetes.io/docs/getting-started-guides/minikube/
+https://kubernetes.io/docs/reference/kubectl/docker-cli-to-kubectl/
