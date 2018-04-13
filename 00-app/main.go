@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"log"
 	"os"
+	"io"
 )
 
 func main() {
@@ -41,7 +42,7 @@ func main() {
 		f, err := os.Open(fname)
 		switch {
 		case os.IsNotExist(err):
-			fallthrough
+			break
 		case err == nil:
 			if _, err = fmt.Fscanf(f,"%d", &cnt); err != nil {
 				log.Panicln(err)
@@ -58,14 +59,13 @@ func main() {
 		if err != nil {
 			log.Panicln(err)
 		}
-		if _, err = fmt.Fprintln(f, cnt); err != nil {
-			log.Panicln(err)
-		}
-		_, err = fmt.Fprintln(writer, cnt)
-		if err != nil {
-			log.Panicln(err)
-		}
-		if err = f.Close(); err != nil {
+		defer func() {
+			if err := f.Close(); err != nil {
+				log.Panicln(err)
+			}
+		}()
+
+		if _, err = fmt.Fprintln(io.MultiWriter(f, writer), cnt); err != nil {
 			log.Panicln(err)
 		}
 	})
