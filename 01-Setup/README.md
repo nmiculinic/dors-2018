@@ -9,6 +9,11 @@ kubectl config get-contexts  # Check active context
 eval $(minikube docker-env)  # set minikubes docker daemon as currently running (ala docker-machine)
 docker ps 
 kubectl get pod --all-namespaces
+kubectl cluster-info
+kubectl get events
+kubectl config view
+minikube addons enable heapster
+minikube addons open heapster
 ```
 
 More information:
