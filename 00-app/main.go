@@ -43,7 +43,9 @@ func main() {
 		case os.IsNotExist(err):
 			fallthrough
 		case err == nil:
-			fmt.Fscanf(f,"%d", &cnt)
+			if _, err = fmt.Fscanf(f,"%d", &cnt); err != nil {
+				log.Panicln(err)
+			}
 			if err = f.Close(); err != nil {
 				log.Panicln(err)
 			}
