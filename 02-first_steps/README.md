@@ -3,3 +3,6 @@ Tasks:
     * Find pod's IP address, hosting node, containers, labels, resource usage.
     * Open dashboard `minikube dashboard`
     * Look at the pod logs
+
+Resources:
+    * https://kubernetes.io/docs/concepts/workloads/pods/pod/
