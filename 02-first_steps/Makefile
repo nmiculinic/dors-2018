@@ -9,7 +9,7 @@ build: hello_world docker_image
 
 .PHONY: build
 
-deploy:
+deploy: build
 	kubectl apply -f hello_world_pod.yaml
 
 .PHONY:deploy

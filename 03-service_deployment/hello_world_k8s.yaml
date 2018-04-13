@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: hello-world
+  labels:
+    app: hello-world
+spec:
+  containers:
+    - name: hello-world
+      image: dorc-hello-world
+      ports:
+        - name: http
+          containerPort: 8080
+      resources:
+        limits:
+          cpu: 0.2
+          memory: "10Mi"
