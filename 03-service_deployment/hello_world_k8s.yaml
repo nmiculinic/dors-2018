@@ -1,17 +1,38 @@
-apiVersion: v1
-kind: Pod
+apiVersion: extensions/v1beta1
+kind: Deployment
 metadata:
-  name: hello-world
   labels:
     app: hello-world
+  name: hello-world-deployment
 spec:
-  containers:
-    - name: hello-world
-      image: dorc-hello-world
-      ports:
-        - name: http
-          containerPort: 8080
-      resources:
-        limits:
-          cpu: 0.2
-          memory: "10Mi"
+  replicas: 3
+  selector:
+    matchLabels:
+      app: hello-world
+  template:
+    metadata:
+      labels:
+        app: hello-world
+    spec:
+      containers:
+      - image: dors-hello-world
+        imagePullPolicy: IfNotPresent
+        name: hello-world
+        ports:
+        - containerPort: 8080
+          name: http
+          protocol: TCP
+      restartPolicy: Always
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: hello-world
+spec:
+  ports:
+  - port: 8080
+    protocol: TCP
+    targetPort: http
+  selector:
+    app: hello-world
+  type: NodePort
