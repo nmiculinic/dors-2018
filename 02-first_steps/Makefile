@@ -3,7 +3,7 @@ hello_world: main.go
 
 docker_image: hello_world
 	docker build -t dors-hello-world .
-.PHONY: build
+.PHONY: docker_image
 
 build: hello_world docker_image
 
@@ -14,4 +14,4 @@ deploy: build
 
 .PHONY:deploy
 
-
+.FORCE:
