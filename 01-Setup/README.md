@@ -1,4 +1,8 @@
-Install minikube, kubectl
+Install minikube, kubectl, go (most examples use go here)
+https://kubernetes.io/docs/tasks/tools/install-minikube/
+https://kubernetes.io/docs/tasks/tools/install-kubectl/
+https://golang.org/doc/install#install
+
 ```bash
 minikube start --vm-driver=virtualbox
 kubectl config get-contexts  # Check active context
