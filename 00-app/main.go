@@ -9,7 +9,7 @@ import (
 )
 
 func main() {
-	folder := os.Getenv("DORS_FOLDER")
+	folder := os.Getenv("DORS_HOME")
 	if folder == "" {
 		var err error
 		folder, err = os.Getwd()
@@ -65,7 +65,7 @@ func main() {
 			}
 		}()
 
-		if _, err = fmt.Fprintln(io.MultiWriter(f, writer), cnt); err != nil {
+		if _, err = fmt.Fprintln(io.MultiWriter(f, writer), cnt, "from", hostname); err != nil {
 			log.Panicln(err)
 		}
 	})
