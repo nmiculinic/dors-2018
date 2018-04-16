@@ -1,2 +1,3 @@
-Tasks:
-    * kubectl get pvc, pv
+Discussion:
+    * What was good?
+    * What could we do better?
