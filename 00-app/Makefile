@@ -9,4 +9,8 @@ build: hello_world docker_image
 
 .PHONY: build
 
+clean:
+	kubectl delete all --all
+
+.PHONY: clean
 .FORCE:

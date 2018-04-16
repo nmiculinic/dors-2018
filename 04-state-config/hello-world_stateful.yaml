@@ -1,0 +1,19 @@
+apiVersion: apps/v1beta2
+kind: StatefulSet
+metadata:
+  name: hello-world-stateful
+spec:
+  serviceName: "hello-world-stateful"
+  selector:
+    matchLabels:
+      app: hello-world-stateful
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        app: hello-world-stateful
+    spec:
+      containers:
+      - name: hello-world-stateful
+        image: dors-hello-world
+        imagePullPolicy: IfNotPresent
