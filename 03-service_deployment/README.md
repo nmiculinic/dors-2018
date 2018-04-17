@@ -16,6 +16,7 @@ Tasks:
     * Find service endpoints `kubectl get endpoints`
 
 Resources:
-    https://kubernetes.io/docs/concepts/workloads/controllers/deployment/
-    https://kubernetes.io/docs/concepts/services-networking/service/
+    * https://kubernetes.io/docs/concepts/workloads/controllers/deployment/
+    * https://kubernetes.io/docs/concepts/services-networking/service/
+    * https://kubernetes.io/docs/tutorials/kubernetes-basics/expose-intro/
     * Using dig (part of bind-tools) -- https://www.madboa.com/geek/dig/#use-the-search-list-in-etc-resolv-conf

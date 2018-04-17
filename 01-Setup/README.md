@@ -17,6 +17,9 @@ minikube addons open heapster
 ```
 
 More information:
+* https://kubernetes.io/docs/tutorials/kubernetes-basics
 * https://kubernetes.io/docs/getting-started-guides/minikube/
 * https://kubernetes.io/docs/reference/kubectl/docker-cli-to-kubectl/
+* https://kubernetes.io/docs/user-guide/walkthrough/
+* https://kubernetes.io/docs/user-guide/walkthrough/k8s201/
 * https://github.com/GoogleCloudPlatform/kubernetes-workshops (( Some of the materials were inspired by it ))
